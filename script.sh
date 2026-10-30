@@ -1,9 +1,9 @@
 #!/bin/bash
 
-APP_PATH="$HOME/Applications/steam.app"
+APP_PATH="$HOME/Applications/.app"
 
 if [ ! -d "$APP_PATH" ]; then
-    echo "❌ Error: Opera GX not found at $APP_PATH"
+    echo "❌ Error: App not found at $APP_PATH"
     exit 1
 fi
 
@@ -25,7 +25,7 @@ find "$APP_PATH" \( -name "*.framework" -o -name "*.app" -o -name "*.dylib" -o -
     fi
 done
 
-# 3. Explicitly sign the specific failing framework version from your log
+# 3. Explicitly sign the specific failing framework version from your log (For Opera GX)
 echo "✍️ Targeting the primary Opera Framework..."
 FRAMEWORK_PATH="$APP_PATH/Contents/Frameworks/Opera Framework.framework"
 if [ -d "$FRAMEWORK_PATH" ]; then
